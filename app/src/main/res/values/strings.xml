@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Test_Android</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="profile">Профиль</string>
+    <string name="menu">Меню</string>
+    <string name="basket">Корзина</string>
+    <string name="city">Москва</string>
+</resources>
