@@ -1,19 +1,15 @@
 package com.example.test_android.presentation.ui.home
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.cardview.widget.CardView
-import androidx.core.graphics.drawable.toDrawable
-import androidx.core.view.forEach
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.test_android.data.room.ProductDao
+import com.example.test_android.data.room.ProductDatabase
 import com.example.test_android.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,6 +26,9 @@ class HomeFragment : Fragment() {
 
     private lateinit var categoryAdapter: CategoryAdapter
     private val categoryRecycler: RecyclerView by lazy { binding.categoryRecycler }
+
+    private lateinit var db: ProductDatabase
+    private var contactDao: ProductDao? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -3,13 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginRight="8dp"
-    app:cardCornerRadius="16dp">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="10dp">
 
     <TextView
         android:id="@+id/category_title"
         android:layout_width="120dp"
         android:layout_height="36dp"
         android:gravity="center"
-        android:text="Напитки" />
+        android:shadowColor="@color/shadow"
+        android:shadowRadius="10"
+        android:text="@string/category" />
 </androidx.cardview.widget.CardView>

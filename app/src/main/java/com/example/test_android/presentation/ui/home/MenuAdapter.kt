@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.test_android.R
 import com.example.test_android.databinding.ItemProductBinding
 import com.example.test_android.domain.ui_model.Product
+import com.example.test_android.presentation.di.App
 
 class MenuAdapter() :
     RecyclerView.Adapter<MenuAdapter.MenuHolder>() {
@@ -27,6 +29,7 @@ class MenuAdapter() :
                 .into(productImage)
             productTitle.text = productList[position].title
             productDescription.text = productList[position].description
+            productButton.text = App.getContext()?.getString(R.string.title_button, productList[position].price) ?: "Error"
         }
     }
 

@@ -15,10 +15,8 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
             app:contentScrim="@color/gray"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            app:scrimVisibleHeightTrigger="120dp">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/banner_recycler"
@@ -26,24 +24,33 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="70dp"
                 android:layout_marginBottom="15dp"
-                android:layout_marginStart="16dp"
-                android:orientation="horizontal"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.9" />
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal" />
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent"
+                android:background="@android:color/white"
                 android:backgroundTint="@color/white"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layout_collapseMode="pin"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+                app:layout_scrollFlags="scroll">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/city" />
+                    android:text="@string/city"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:contentDescription="@string/arrow"
+                    android:src="@drawable/ic_arrow" />
 
                 <ImageButton
                     android:id="@+id/imageButton"
@@ -64,10 +71,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:orientation="horizontal"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             />
     </com.google.android.material.appbar.AppBarLayout>
 
