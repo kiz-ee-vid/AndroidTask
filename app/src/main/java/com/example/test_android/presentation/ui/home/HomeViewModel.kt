@@ -1,10 +1,7 @@
 package com.example.test_android.presentation.ui.home
 
-import android.widget.Toast
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.test_android.data.RepositoryImpl
 import com.example.test_android.data.room.ProductDatabase
 import com.example.test_android.domain.ui_model.Product
@@ -14,9 +11,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.net.InetSocketAddress
-import java.net.Socket
-import java.net.SocketAddress
 import javax.inject.Inject
 
 @HiltViewModel
@@ -29,8 +23,6 @@ class HomeViewModel @Inject constructor(private val repository: RepositoryImpl) 
 
     private var db: ProductDatabase = ProductDatabase.getInstance(App.getContext()!!)
     private var productDao = db.contactDao()
-
-    var connection = MutableLiveData<Boolean>()
 
     fun getData() {
         CoroutineScope(Dispatchers.IO).launch() {

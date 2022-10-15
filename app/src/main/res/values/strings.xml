@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test_Android</string>
+    <string name="app_name">Test shop</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -10,4 +10,5 @@
     <string name="title_button">От %1$d $</string>
     <string name="category">Напитки</string>
     <string name="arrow">arrow</string>
+    <string name="banners">Баннеры</string>
 </resources>

@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.example.test_android.R
 import com.example.test_android.databinding.ItemBannerBinding
 
-class BannerAdapter() :
+class BannerAdapter :
     RecyclerView.Adapter<BannerAdapter.BannerHolder>() {
 
     private var bannerList = listOf(R.drawable.ic_banner0, R.drawable.ic_banner1)

@@ -4,38 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.home.HomeFragment">
+    tools:context=".presentation.ui.home.MenuFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_barlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray">
+        android:background="@color/white">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentScrim="@color/gray"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/banner_recycler"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="70dp"
-                android:layout_marginBottom="15dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginEnd="8dp"
-                android:orientation="horizontal" />
+                android:layout_marginBottom="15dp"
+                android:contentDescription="@string/banners"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_banner" />
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@android:color/white"
-                android:backgroundTint="@color/white"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                app:layout_collapseMode="pin"
-                app:layout_scrollFlags="scroll">
+                app:layout_collapseMode="pin">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -70,15 +69,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:orientation="horizontal"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            />
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_category" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/gray"
         android:id="@+id/product_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_product" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

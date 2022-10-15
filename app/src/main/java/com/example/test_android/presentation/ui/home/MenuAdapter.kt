@@ -10,7 +10,7 @@ import com.example.test_android.databinding.ItemProductBinding
 import com.example.test_android.domain.ui_model.Product
 import com.example.test_android.presentation.di.App
 
-class MenuAdapter() :
+class MenuAdapter :
     RecyclerView.Adapter<MenuAdapter.MenuHolder>() {
 
     private var productList = ArrayList<Product>()

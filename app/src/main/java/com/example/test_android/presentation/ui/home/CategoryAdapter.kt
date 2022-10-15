@@ -4,15 +4,10 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.test_android.R
-import com.example.test_android.databinding.ItemBannerBinding
 import com.example.test_android.databinding.ItemCategoryBinding
-import com.example.test_android.domain.ui_model.Product
 import com.example.test_android.presentation.di.App
 
 class CategoryAdapter(val itemClick: (Int) -> Unit) :
@@ -44,11 +39,11 @@ class CategoryAdapter(val itemClick: (Int) -> Unit) :
                         R.color.red_text,
                         null)
                 )
-                holder.binding.root.elevation = 0.0F
+                holder.binding.root.cardElevation = 0.0F
             } else{
                 holder.binding.categoryTitle.setBackgroundColor(Color.WHITE)
                 holder.binding.categoryTitle.setTextColor(Color.BLACK)
-                holder.binding.root.elevation = 10.0F
+                holder.binding.root.cardElevation = 10.0F
             }
         }
         holder.itemView.setOnClickListener {

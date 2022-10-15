@@ -2,24 +2,22 @@ package com.example.test_android.presentation.ui.home
 
 import android.content.Context
 import android.net.ConnectivityManager
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.test_android.databinding.FragmentHomeBinding
+import com.example.test_android.databinding.FragmentMenuBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class MenuFragment : Fragment() {
 
-    private val binding: FragmentHomeBinding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
+    private val binding: FragmentMenuBinding by lazy { FragmentMenuBinding.inflate(layoutInflater) }
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var menuAdapter: MenuAdapter
     private val productRecycler: RecyclerView by lazy { binding.productRecycler }
@@ -50,16 +48,12 @@ class HomeFragment : Fragment() {
 
         bannerAdapter = BannerAdapter()
         bannerRecycler.adapter = bannerAdapter
-        bannerRecycler.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
 
         categoryAdapter = CategoryAdapter() {
             viewModel.changeCurrentCategory(it)
             viewModel.filterProductList()
         }
-
         categoryRecycler.adapter = categoryAdapter
-        categoryRecycler.layoutManager =
-            LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
 
         menuAdapter = MenuAdapter()
         productRecycler.adapter = menuAdapter
